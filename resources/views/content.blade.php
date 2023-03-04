@@ -15,7 +15,7 @@
             <Input name="cpf" type="text" placeholder="ex: XXX.XXX.XXX-XX"/>
 
             <label>Nome:</label>
-            <input name="nome" type="text"/>
+            <input name="name" type="text"/>
 
             <label>Data Nascimento:</label>
             <input name="dataN" type="date"/>
