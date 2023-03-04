@@ -18,18 +18,18 @@
             <input name="name" type="text"/>
 
             <label>Data Nascimento:</label>
-            <input name="dataN" type="date"/>
+            <input name="birthdate" type="date"/>
 
             <label>Sexo</label>
-            <input name="sexo" value="masculino" type="radio"/> <b>Masculino</b>
-            <input name="sexo" value="femino" type="radio"/> <b>Feminino </b>
+            <input name="sex" value="masculino" type="radio"/> <b>Masculino</b>
+            <input name="sex" value="femino" type="radio"/> <b>Feminino </b>
             <br>
 
             <label>Endereço:</label>
-            <input  name="endereco" type="text"/>
+            <input  name="address" type="text"/>
 
             <label>Estado:</label>
-            <select name="estados">
+            <select name="states">
 
                 <option selected value="">Todos:</option>
                 <option value="AC">Acre</option>
@@ -62,7 +62,7 @@
             </select>
 
                 <label>Cidade</label>
-                <select name="cidades">
+                <select name="cities">
                     <option selected> Todos </option>
                     <option value="São Paulo">São Paulo</option>
                     <option value="Guarulhos">Guarulhos</option>

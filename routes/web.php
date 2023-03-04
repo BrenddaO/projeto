@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::controller(UserController::class)->prefix('user')->group(function () {
     Route::get('/', 'index');
     Route::post('/', 'create');
-    Route::post('/{id}', 'show');
-    Route::post('/{id}', 'edit');
-    Route::get('/{id}', 'destroy');
+    Route::get('/{id}', 'show');
+    Route::patch('/{id}', 'edit');
+    Route::delete('/{id}', 'destroy');
  });
