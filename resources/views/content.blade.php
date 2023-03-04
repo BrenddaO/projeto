@@ -8,7 +8,7 @@
 
 @section('content')
     <fieldset>
-        <form method="POST" action="{{ route('enviar') }}">
+        <form method="POST" action="{{ route('user.create') }}">
             @csrf
             <h3>Cadastro Cliente</h3>
             <label>CPF:</label>

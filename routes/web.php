@@ -18,10 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::controller(UserController::class)->prefix('user')->group(function () {
-    Route::get('/', 'index');
-    Route::post('/', 'create');
-    Route::get('/{id}', 'show');
-    Route::patch('/{id}', 'edit');
-    Route::delete('/{id}', 'destroy');
+Route::controller(UserController::class)->prefix('user')->name('user.')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::post('/', 'create')->name('create');
+    Route::get('/{id}', 'show')->name('show');
+    Route::patch('/{id}', 'edit')->name('edit');
+    Route::delete('/{id}', 'destroy')->name('destroy');
  });
