@@ -27,16 +27,6 @@ class UserController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -60,17 +50,6 @@ class UserController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\UserData  $userData
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, UserData $userData)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
