@@ -20,8 +20,8 @@ Route::get('/', function () {
 
 Route::controller(UserController::class)->prefix('user')->name('user.')->group(function () {
     Route::get('/', 'index')->name('index');
-    Route::post('/', 'create')->name('create');
-    Route::get('/{id}', 'show')->name('show');
-    Route::patch('/{id}', 'edit')->name('edit');
-    Route::delete('/{id}', 'destroy')->name('destroy');
+    Route::post('/create', 'create')->name('create');
+    Route::get('/show/{id}', 'show')->name('show');
+    Route::put('/edit/{id}', 'edit')->name('edit');
+    Route::delete('/destroy/{id}', 'destroy')->name('destroy');
  });

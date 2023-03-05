@@ -7,13 +7,16 @@
 @endsection
 
 @section('content')
+<pre>
+{{ $user }}
+</pre>
     <fieldset>
         <form method="POST" action="{{ route('user.create') }}">
             @csrf
             <h3>Cadastro Cliente</h3>
             <label>CPF:</label>
-            <Input name="cpf" type="text" placeholder="ex: XXX.XXX.XXX-XX"/>
 
+            <Input name="cpf" type="text" placeholder="ex: XXX.XXX.XXX-XX" required/>
             <label>Nome:</label>
             <input name="name" type="text"/>
 
@@ -21,15 +24,15 @@
             <input name="birthdate" type="date"/>
 
             <label>Sexo</label>
-            <input name="sex" value="masculino" type="radio"/> <b>Masculino</b>
-            <input name="sex" value="femino" type="radio"/> <b>Feminino </b>
+            <input name="sex" value="masculino" type="radio" required/> <b>Masculino</b>
+            <input name="sex" value="femino" type="radio" required/> <b>Feminino </b>
             <br>
 
             <label>Endereço:</label>
-            <input  name="address" type="text"/>
+            <input  name="address" type="text" required/>
 
             <label>Estado:</label>
-            <select name="states">
+            <select name="states" required>
 
                 <option selected value="">Todos:</option>
                 <option value="AC">Acre</option>
@@ -82,8 +85,8 @@
                 </select>
             <br>
 
-            <button name="botao1" type="submit" >Salvar</button>
-            <button name="botao2" type="reset">Limpar</button>
+            <button type="submit" >Salvar</button>
+            <button type="reset">Limpar</button>
 
         </fieldset>
         </form>

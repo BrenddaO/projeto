@@ -13,8 +13,23 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('content');
+    {   // CRIAR
+        //$user = UserData::create([]);
+
+        //ACHAR UM
+        //$user = UserData::find(1);
+
+        //ATUALIZAR
+        //$user = UserData::find(1)->update([]);
+
+        //DELETAR
+        //$user = UserData::find(1)->delete();
+
+        //PEGAR TODOS
+        $user = UserData::all();
+
+
+        return view('content', ['user' => $user]);
     }
 
     /**
@@ -22,9 +37,20 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        // $request->all();
+
+        /*$request->validate([
+            '*' => 'required',
+        ])*/
+        //$user = UserData::create($id);
+        // //return "criou, welcome";(Queria que ele retornasse p
+        // uma pagina falando ex: CADASTRO, BEM VINDO)
+        $request->validate([
+            '*' => 'required',
+        ]);
+        return view('content');
     }
 
 
@@ -34,9 +60,15 @@ class UserController extends Controller
      * @param  \App\Models\UserData  $userData
      * @return \Illuminate\Http\Response
      */
-    public function show(UserData $userData)
+    public function show(UserData $userData, $id)
     {
-        //
+//         1 – findOrFail
+// Ele é um método bem útil para tratarmos os resultados de Rotas ou Controllers que necessitam do resultado desta busca para funcionar.
+        $user = UserData::findOrFail($id);
+        $user = UserData::firstOrCreate($id);
+        return view('content', ['user' => $user]);
+        //(WIP)
+
     }
 
     /**
@@ -45,9 +77,11 @@ class UserController extends Controller
      * @param  \App\Models\UserData  $userData
      * @return \Illuminate\Http\Response
      */
-    public function edit(UserData $userData)
+    public function edit(UserData $userData, Request $request, $id)
     {
-        //
+        $user= UserData::updateOrCreate($id);
+
+
     }
 
 
@@ -57,8 +91,8 @@ class UserController extends Controller
      * @param  \App\Models\UserData  $userData
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UserData $userData)
+    public function destroy(UserData $userData, $id)
     {
-        //
+        $user= UserData::destroy(delete);
     }
 }
